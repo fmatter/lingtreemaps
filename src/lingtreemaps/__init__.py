@@ -15,6 +15,7 @@ from Bio import Phylo
 from matplotlib import patheffects
 from matplotlib.patches import Patch
 
+
 handler = colorlog.StreamHandler(None)
 handler.setFormatter(
     colorlog.ColoredFormatter("%(log_color)s%(levelname)-7s%(reset)s %(message)s")
@@ -59,12 +60,8 @@ def download_glottolog_tree(root, df=None):
 
 def get_glottolog_csv(glottocode):
     try:
-        from cldfbench.catalogs import (  # pylint: disable=import-outside-toplevel
-            Glottolog,
-        )
-        from cldfbench.catalogs import (  # pylint: disable=import-outside-toplevel
-            pyglottolog,
-        )
+        from cldfbench.catalogs import Glottolog  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import pyglottolog  # pylint: disable=import-outside-toplevel
     except ImportError:
         log.error("Please run pip install cldfbench[glottolog]")
         sys.exit()
