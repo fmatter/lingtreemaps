@@ -7,3 +7,5 @@ In the latter scenario, note that YAML ``null`` corresponds to python ``None``.
 
 .. include:: ../src/lingtreemaps/data/default_config.yaml
    :literal:
+
+A ``text_df`` must have the following columns: ``Latitude``, ``Longitude``, ``Label``.
