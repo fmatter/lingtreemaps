@@ -7,7 +7,7 @@ authors:
     given-names: Florian
     orcid: "https://orcid.org/0000-0002-2545-5154"
 date-released: 2022-08-29
-version: "0.0.1"
+version: "0.0.2.dev"
 url: "https://github.com/fmatter/lingtreemaps/releases/tag/0.0.1"
 keywords:
   - linguistics
