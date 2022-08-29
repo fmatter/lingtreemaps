@@ -59,12 +59,12 @@ def download_glottolog_tree(root, df=None):
 
 def get_glottolog_csv(glottocode):
     try:
-        from cldfbench.catalogs import (
+        from cldfbench.catalogs import (  # pylint: disable=import-outside-toplevel
             Glottolog,
-        )  # pylint: disable=import-outside-toplevel
-        from cldfbench.catalogs import (
+        )
+        from cldfbench.catalogs import (  # pylint: disable=import-outside-toplevel
             pyglottolog,
-        )  # pylint: disable=import-outside-toplevel
+        )
     except ImportError:
         log.error("Please run pip install cldfbench[glottolog]")
         sys.exit()
@@ -186,7 +186,9 @@ def plot_map(  # noqa: MC0001
         """Sorts the children of a clade according to their "y" value"""
         del kwargs
         children = clade.clades
-        children = sorted(children, key=lambda x: get_clade_extreme(x, df, tree_sort_mode))
+        children = sorted(
+            children, key=lambda x: get_clade_extreme(x, df, tree_sort_mode)
+        )
         clade.clades = children
 
     def sort_tree(tree, df, **kwargs):
