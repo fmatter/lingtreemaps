@@ -6,11 +6,8 @@ from lingtreemaps.cli import load_conf
 
 dic = {1: "A", 2: "B", 3: "C"}
 
-w = "newc1243"
-
 for f in Path(".").glob("*.csv"):
     name = f.stem
-    if name != w: continue
     df = pd.read_csv(f"{name}.csv")
     df.sort_values(by="ID", inplace=True)
     data = []

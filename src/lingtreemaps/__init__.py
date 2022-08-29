@@ -135,7 +135,7 @@ def plot_map(  # noqa: MC0001
         lg_df = pd.merge(
             lg_df, feature_df, left_on=id_col, right_on="Clade", how="left"
         )  # insert feature values into language table
-        if not color_dict:
+        if color_dict is None:
             values = []
             for x in list(feature_df["Value"]):
                 if x not in values:
@@ -179,7 +179,7 @@ def plot_map(  # noqa: MC0001
             return df[df[id_col].isin(leaf_names)]["y"].max()
         raise ValueError("Specify min or max.")
 
-    def sort_clade(clade, df, tree_sort_mode="min", **kwargs):
+    def sort_clade(clade, df, tree_sort_mode=tree_sort_mode, **kwargs):
         """Sorts the children of a clade according to their "y" value"""
         del kwargs
         children = clade.clades
