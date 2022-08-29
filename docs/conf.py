@@ -33,7 +33,7 @@ version = release = "0.0.1.dev"
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.coverage",
-    "sphinxcontrib.napoleon",
+    "sphinx.ext.napoleon",
     "sphinx_click",
 ]
 
