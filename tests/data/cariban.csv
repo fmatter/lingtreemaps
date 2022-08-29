@@ -1,0 +1,36 @@
+"ID","Name","lat","long","Glottocode","IPA","Alternative_Names","Shorthand","Dialect_Of","Alive","Proto_Language"
+"apa","Apalaí",1.49792,-54.7457,"apal1257","Aparai",,"apalai",,TRUE,FALSE
+"tri","Tiriyó",3.249390526,-55.70756815,"trio1238","Tɨrɨjo",,"trio",,TRUE,FALSE
+"hix","Hixkaryána",-0.16265,-58.80153,"hixk1239","Hiʃkarʲana",,"hixka",,TRUE,FALSE
+"pan","Panare",6.95035,-65.8483,"enap1235","Panare","E'ñapa (Woromaipu)","panare",,TRUE,FALSE
+"mac","Macushi",3.391549585,-61.36240579,"macu1259","Makuʃi",,"macushi",,TRUE,FALSE
+"wmr","Waimiri",-0.61832,-60.4259,"waim1253","Waimiri-Atroari","yawaperi; crichana?","waimiri",,TRUE,FALSE
+"mak","Ye'kwana",4.70705,-64.3877,"maqu1238","Jeʔkwana","Maquiritari","maqui",,TRUE,FALSE
+"wai","Waiwai",1.50881,-59.1417,"waiw1244","Waiwai",,"waiwai",,TRUE,FALSE
+"way","Wayana",2.77537,-54.4429,"waya1269","Wajana",,"wayana",,TRUE,FALSE
+"kar","Kari'ña",8.395469332,-64.04078087,"gali1262","Kariʔna","Galibi","kalina",,TRUE,FALSE
+"ikp","Ikpeng",-11.37822,-53.49553,"ikpe1245","Ikpeŋ","Txikão","ikpeng",,TRUE,FALSE
+"uxc","U. X. Carib",-12.3035,-53.2261,"kuik1246","Kuikuro","Matipui","uxc",,TRUE,FALSE
+"ara","Arara",-3.71263,-53.0657,"para1310","Arara",,"arara",,TRUE,FALSE
+"pem","Pemón",4.97031,-61.4033,"pemo1248","Pemon",,"pemon",,TRUE,FALSE
+"kap","Kapón",6.16277,-60.862,"akaw1239","Kaʔpon",,"kapon",,TRUE,FALSE
+"yuk","Yukpa",9.67534,-73.0557,"yukp1241","Jukpa",,"yukpa",,TRUE,FALSE
+"car","Karijona",1.21894,-72.0664,"cari1279","Karihona",,"carijo",,TRUE,FALSE
+"bak","Bakairi",-14.2628,-54.7034,"baka1277","Bakajri",,"bakairi",,TRUE,FALSE
+"tam","Tamanaku",2.765,-65.883,"tama1338","Tamanaku",,"tamanaku",,FALSE,FALSE
+"kax","Werikyana",2.17138,-55.9101,"kaxu1237","Kat͡ʃujana",,"kaxui",,TRUE,FALSE
+"aku","Akuriyó",3.19607,-55.6294,"akur1238","Akurijo","Wama","akuriyo",,TRUE,FALSE
+"jap","Japreria",10.5523,-72.7101,"japr1238","Japreria",,"japreria",,TRUE,FALSE
+"map","Mapoyo",5.96952,-67.2581,"mapo1246","Mapojo",,"mapoyo",,TRUE,FALSE
+"yab","Yawarana",5.32692,-66.276,"yaba1248","Jawarana",,"yawarana",,TRUE,FALSE
+"pno","Pémono",5.248,-66.082,"pemo1245","Pemono",,"pemono",,FALSE,FALSE
+"kar","more",7.365296212,-60.67046261,,,,,,,
+"kar","mre",5.451680511,-55.96566049,,,,,,,
+"kar","more",5.568394601,-53.98153522,,,,,,,
+"kar","more",4.150574232,-52.35014872,,,,,,,
+"tri","more",2.483426185,-56.1842837,,,,,,,
+"tri","more",2.01230985373545,-55.8123685527093,,,,,,,
+"tri","more",1.746039784,-56.50101343,,,,,,,
+"mac","more",3.952945534,-59.29244675,,,,,,,
+"mac","more",2.784669092,-60.47934786,,,,,,,
+"mac","more",4.686936276,-61.08592082,,,,,,,

@@ -1,0 +1,5 @@
+leaf_marker_size: 0.3
+text_x_offset: 0.4
+tree_map_padding: 0.6
+background: osm
+sort_mode: max

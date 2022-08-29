@@ -1,0 +1,93 @@
+# When debugging, lingtreemaps will print the value of relevant
+# configuration values.
+# It will also show helping lines on the map.
+debug: False
+
+# Column connecting the language table and the "Clade" column in the
+# feature table
+id_col: "ID"
+
+# Column of the language table to be printed at the leaves 
+label_column: "ID"
+
+# The filename. If unspecified, the name of the language table will
+# be used.
+filename: null
+
+# File format of the output, e.g. pdf, svg, tif, png
+file_format: "pdf"
+
+# Additional (horizontal) padding between tree and map.
+# If unspecified, lingtreemaps will guess.
+tree_map_padding: null
+
+# How should the tree clades be sorted?
+tree_sort_mode: min
+
+# The absolute depth of the tree
+# If unspecified, lingtreemaps will guess.
+tree_depth: null
+
+# Padding between the outer boundaries of the map and the rectangle
+# in which languages are located.
+# If unspecified, lingtreemaps will guess.
+internal_map_padding: null
+
+# Color palette
+seaborn_palette: "bright"
+
+# Custom value:color associations
+# If unspecified, lingtreemaps will use the values in
+# seaborn_palette
+color_dict: null
+
+# Position of the legend
+legend_position: "upper right"
+
+# Size of the circles at the leaves
+# If unspecified, lingtreemaps will guess.
+leaf_marker_size: null
+
+# Line weight of the circles at the leaves
+leaf_lw: 1
+
+# Size of the circles on the map
+map_marker_size: 20
+
+# Padding between the map and the image boundaries
+external_map_padding: 0
+
+# Font size for leaf labels, map labels, and the text_df labels
+font_size: 4
+
+# x shift of leaf labels
+# If unspecified, lingtreemaps will guess.
+text_x_offset: null
+
+# y shift of leaf labels
+# If unspecified, lingtreemaps will guess.
+text_y_offset: null
+
+# Padding between the root of the tree and the image boundaries
+# If unspecified, lingtreemaps will guess.
+base_padding: null
+
+# Overall size of the legend
+legend_size: 8
+
+# Rotation of the map.
+# Cannot be used with background="osm"
+rotation: 0
+
+# pyplot ax to be plotted on
+ax: null
+
+# Background. Current other option: "osm"
+background: "countries+rivers"
+
+# Position of the contributor attribution when using
+# background="osm"
+attribution_position: "bottomright"
+
+# Specify a contextily map tile provider
+cx_provider: null
