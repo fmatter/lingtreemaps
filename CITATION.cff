@@ -3,15 +3,14 @@
 cff-version: "1.1.0"
 title: "lingtreemaps"
 authors:
-  -
-    family-names: Matter
+  - family-names: Matter
     given-names: Florian
     orcid: "https://orcid.org/0000-0002-2545-5154"
-date-released: 20??-MM-DD
-version: "0.0.1.dev"
-repository-code: "https://github.com/fmatter/lingtreemaps"
+date-released: 2022-08-29
+version: "0.0.1"
+url: "https://github.com/fmatter/lingtreemaps/releases/tag/0.0.1"
 keywords:
   - linguistics
-  - keyword2
+  - visualization
 message: "If you use this software, please cite it using these metadata."
-license: BSD-3-Clause
+license: Apache-2.0
