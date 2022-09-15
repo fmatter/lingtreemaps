@@ -442,8 +442,9 @@ def plot_map(  # noqa: MC0001
 
     outer_rect.plot(ax=ax, edgecolor="black", facecolor="none", zorder=10, lw=1)
     mask.plot(ax=ax, color="white", alpha=1, edgecolor="black", lw=0.5)
+    tree_lw = tree_lw or plt.rcParams["lines.linewidth"]
 
-    draw_clade(tree.root, "black", plt.rcParams["lines.linewidth"])
+    draw_clade(tree.root, "black", tree_lw)
 
     def get_attribution_position(position):
         if position == "bottomleft":
@@ -549,6 +550,7 @@ internal_map_padding = {internal_map_padding}
 text_x_offset = {text_x_offset}
 text_y_offset = {text_y_offset}
 tree_depth = {tree_depth}
+tree_lw = {tree_lw}
 base_padding = {base_padding}
 leaf_marker_size = {leaf_marker_size}"""
         )
