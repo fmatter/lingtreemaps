@@ -115,6 +115,7 @@ def plot_map(  # noqa: MC0001
     leaf_marker_size,
     leaf_lw,
     map_marker_size,
+    map_marker_lw,
     connection_lw,
     external_map_padding,
     font_size,
@@ -300,6 +301,7 @@ def plot_map(  # noqa: MC0001
         ax=ax,
         markersize=map_marker_size,
         facecolor=gdf["color"],
+        linewidth=map_marker_lw,
         edgecolor="black",
         zorder=99,
     )
