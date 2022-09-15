@@ -115,6 +115,7 @@ def plot_map(  # noqa: MC0001
     leaf_marker_size,
     leaf_lw,
     map_marker_size,
+    connection_lw,
     external_map_padding,
     font_size,
     print_labels,
@@ -385,6 +386,7 @@ def plot_map(  # noqa: MC0001
                                 "color": point["color"],
                                 "shrinkA": 0,
                                 "shrinkB": 3.5,
+                                "linewidth": connection_lw,
                                 "linestyle": "dotted",
                             },
                         )

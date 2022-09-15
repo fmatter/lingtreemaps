@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * `print_labels` (default: true): print language labels on the tree leafs
 * `leaf_lw` (default: from pyplot): line weight of tree branches
+* `connection_lw` (default: 1): line weight of the leaf-map connections
 
 ### Removed
 
