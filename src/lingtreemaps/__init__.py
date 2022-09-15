@@ -107,6 +107,7 @@ def plot_map(  # noqa: MC0001
     tree_map_padding,
     tree_sort_mode,
     tree_depth,
+    tree_lw,
     internal_map_padding,
     seaborn_palette,
     color_dict,
@@ -116,6 +117,7 @@ def plot_map(  # noqa: MC0001
     map_marker_size,
     external_map_padding,
     font_size,
+    print_labels,
     text_x_offset,
     text_y_offset,
     base_padding,
@@ -363,12 +365,16 @@ def plot_map(  # noqa: MC0001
                     node_alpha = 1
                     for point in gdf[gdf[id_col] == child.name].to_dict("records"):
                         map_node = (point["geometry"].x, point["geometry"].y)
+                        if print_labels:
+                            label_text = gdf[gdf[id_col] == child.name].iloc[0][label_column]
+                        else:
+                            label_text = ""
                         ax.annotate(
                             xytext=(
                                 leaf_coords[0] + text_x_offset,
                                 leaf_coords[1] - text_y_offset,
                             ),
-                            text=gdf[gdf[id_col] == child.name].iloc[0][label_column],
+                            text=label_text,
                             # .upper(),
                             xy=map_node,
                             alpha=node_alpha,

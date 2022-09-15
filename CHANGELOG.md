@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+* `print_labels` (default: true): print language labels on the tree leafs
 
 ### Removed
 

@@ -28,6 +28,10 @@ tree_sort_mode: min
 # If unspecified, lingtreemaps will guess.
 tree_depth: null
 
+# How far apart should leaves be?
+# If unspecified, lingtreemaps will guess.
+leaf_spacing: null
+
 # Padding between the outer boundaries of the map and the rectangle
 # in which languages are located.
 # If unspecified, lingtreemaps will guess.
@@ -50,6 +54,10 @@ leaf_marker_size: null
 
 # Line weight of the circles at the leaves
 leaf_lw: 1
+
+# Line weight of the tree
+# If unspecified, lingtreemaps will guess.
+tree_lw: null
 
 # Size of the circles on the map
 map_marker_size: 20
@@ -91,3 +99,5 @@ attribution_position: "bottomright"
 
 # Specify a contextily map tile provider
 cx_provider: null
+
+print_labels: true
