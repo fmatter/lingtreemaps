@@ -1,0 +1,501 @@
+ID,Latitude,Longitude,Name
+bugu1246,27.1929556,92.4713002,Bugun
+sulu1241,27.3153778,92.3840919,Eastern Puroik
+west2873,27.6808861,93.1364474,Western Puroik
+lish1235,27.3688993,92.2394672,Khispi
+chug1252,27.4177713,92.2255891,Duhumbi
+sart1249,27.375914,92.409383,Sartang
+sher1257,27.0035,92.5799,Sherdukpen
+dura1244,28.173,84.435,Dura
+gama1251,28.411,82.6749,Gamale Kham
+east2354,28.5259,82.9523,Eastern Parbate Kham
+west2420,28.6521,82.7348,Western Parbate Kham
+shes1236,27.9437,82.6467,Sheshi Kham
+west2418,28.2462,83.511,Western Magar
+east2352,27.4135166667,87.06171,Eastern Magar
+bujh1238,28.0084,84.5068,Bujhyal
+chep1245,27.7206,84.9017,Chepang
+newa1246,27.67,85.326,Kathmandu Valley Newari
+paha1257,27.566,85.318,Pahari Newari
+east2773,27.576985,86.033964,Eastern Newari
+than1259,28.7554,85.7657,Thangmi
+bara1357,28.3768,85.0584,Baraamu
+limb1266,27.2703,87.8859,Limbu
+yakk1236,27.3714,87.9306,Yakkha
+belh1239,26.9972,87.2783,Belhariya
+athp1241,26.8794,87.3296,Athpariya
+chhi1245,26.961,87.1899,Chintang
+chhu1238,26.9107,87.2133,Chhulung
+nort2727,27.5102,87.2157,Lohorung
+sout2734,26.932,87.3959,Southern Yamphu
+yamp1242,27.6322,87.0441,Yamphu
+east2357,27.5103,87.1134,Eastern Meohang
+west2422,27.4265,87.2893,Western Meohang
+tilu1238,27.2203,86.4694,Tilung
+sunw1242,27.5201,86.2476,Sunwar
+wayu1241,27.3047,86.1227,Wayu
+bahi1252,27.3323,86.3949,Bahing
+jeru1240,27.1741,86.2547,Jerung
+wamb1257,27.14808,86.47646,Wambule
+thul1246,27.5389,87.6063,Thulung
+koii1238,27.1941,86.8531,Koi
+khal1275,27.3912,87.5053,Khaling
+dumi1241,27.45849,86.75699,Dumi
+puma1239,27.0774,86.838,Puma
+dung1252,26.9813,87.3328,Dungmali
+caml1239,27.3371,86.7612,Camling
+bant1281,27.12147,87.04738,Bantawa
+wali1261,26.6369,86.4837,Waling
+samp1249,27.2999,87.0019,Sampang
+kulu1253,27.1606,87.5717,Kulung (Nepal)
+chuk1270,27.358,86.9824,Chukwa
+nach1240,27.4202,86.7001,Nachering
+saam1282,26.8442,87.9534,Saam
+lepc1244,27.0869,88.5726,Lepcha
+lhok1238,26.9135,89.3099,Lhokpu
+sout2739,28.2368,110.022,Southern Tujia
+nort2732,29.3016,109.759,Northern Tujia
+quey1238,30.3113,100.813,Queyu
+japh1234,32.1,102.36,Japhug
+zbua1234,32.1506,101.7048,Zbu
+tsho1240,32.18,101.84,Tshobdun
+situ1238,31.590536,102.660664,Situ
+horp1239,31.1026,101.72,Stau-Dgebshes
+shan1274,31.79891,101.30739,Stodsde
+guan1266,31.5655,101.928,Khroskyabs
+tang1334,38.894904,102.246464,Tangut
+sout2728,31.5392,103.384,Southern Qiang
+nort2722,32.2766,103.192,Northern Qiang
+sout3257,31.852418,103.828678,Southeast Maoxian Qiang
+zhab1238,30.7416,100.983,Zhaba
+zlar1234,29.783701,98.135713,Zlarong
+drag1234,30.509199,98.077073,Drag-yab
+lamo1245,29.892352,97.420774,Lamo
+sout2729,27.8408,100.622,Southern Pumi
+nort2723,28.6626,101.305,Northern Pumi
+west2417,29.444,101.418,Western Muya
+east2351,29.235,102.168,Eastern Muya
+guiq1238,30.4803,102.128,Guiqiong
+tosu1234,28.533333,102.083333,Tosu
+ersu1241,29.2867,102.213,Ersu
+lizu1234,28.333425,101.350309,Lizu
+naxi1245,27.5,100.0,Naxi
+yong1270,27.8,100.9,Narua
+laze1238,27.85,101.45,Laze
+shix1238,28.3895,100.4,Shixing
+namu1246,28.5909,101.898,Namuyi
+phol1235,23.667,104.238,Pholo
+lahu1252,21.2078,100.97,Lahu Shi
+lahu1253,21.2701,100.214,Lahu
+kuco1235,22.26,101.25,Kucong
+lamu1257,25.8,100.15,Lamu
+nalu1239,25.97,102.598,Naluo Yi
+sama1296,23.76,98.825,Samatu
+mili1235,24.115,100.611,Mili
+limi1243,24.469,100.073,Limi
+hler1235,24.4,101.4,Hlersu
+lipo1242,25.226,101.302,Lipo
+miqi1235,25.3,102.301,Miqie
+lolo1259,25.50051,101.30185,Lolopo
+kuan1249,26.45,103.33,Kua-nsi
+kuam1234,26.35,103.33,Kuamasi
+sona1244,26.55,103.33,Sonaga
+talu1238,26.4,101.0,Lavu-Yongsheng-Talu
+xish1235,24.8709,100.711,Xishanba Lalo
+west1506,24.73,98.9,Western Lalu
+dong1286,25.435,100.178,Dongshanba Lalo
+east2696,23.585,101.546,Eastern Lalu
+xuzh1234,25.344026,99.112244,Xuzhang Lalo
+sout3210,23.5,99.33,Southern Lalo
+ekaa1234,23.475,99.865,Eka
+yang1304,25.22482,99.046326,Yangliu
+lisu1250,26.91,98.94,Lisu
+tang1372,26.9,99.9,Tanglang-Toloza
+sadu1234,24.3,102.0,Sadu
+kats1235,24.6,102.4,Katso
+sama1295,25.012,102.2,Samatao
+aluo1235,26.0,102.0,Aluo
+wusa1235,25.7707,102.367,Wusa Nasu
+wume1235,27.574,103.646,Wumeng Nasu
+gepo1234,25.7,102.5,Gepo
+sani1265,25.2,102.12,Sanie
+same1240,24.7859,99.9217,Samei
+ches1238,24.05,101.98,Chesu
+ayiz1244,25.0,103.7,Ayizi
+wudi1238,25.48,102.48,Wuding-Luquan Yi
+sich1238,28.1947,102.121,Sichuan Yi
+awuu1235,25.395,103.306,Southern Awu (Lope)
+ache1244,24.152,102.446,Ache
+sout2723,23.058,101.412,Southern Nisu
+farn1234,25.646902,99.684187,Far Northwestern Nisu
+east2349,23.9843,102.694,Eastern Nisu
+nort2718,24.408,102.456,Northern Nisu
+nyis1235,24.687297,103.59811,Nyisu
+lagh1245,22.2674,103.929,Laghuu
+phum1235,23.1,104.05,Phuma
+bokh1237,23.05,103.7,Bokha
+sout2722,22.87312,103.306087,Southern Muji
+nort2716,23.031191,103.418697,Northern Muji
+muzi1235,23.086,103.464,Muzi
+qila1235,22.570376,103.141292,Qila Muji
+thop1236,24.15,104.9,Thopho
+moji1238,23.2,104.15,Moji
+anip1235,23.7,103.6,Ani Phowa
+labo1243,23.9,103.4,Labo Phowa
+khlu1236,23.1,104.45,Khlula
+zokh1238,23.8,104.8,Zokhuo
+phuk1235,25.5277,106.148,Phukha
+hlep1236,23.591,103.733,Hlepho Phowa
+nisi1238,23.418,104.85,Nisi (China)
+phal1256,23.354,102.505,Phala
+alop1235,23.59,101.933,Alo Phola
+phol1237,23.4674,102.228,Phola
+phuz1235,23.05,103.4,Phuza
+phup1239,23.0,103.4,Phupa
+alug1235,23.0,103.0,Alugu
+phup1237,22.95,102.3,Phupha
+azha1235,23.9,104.15,Azha
+axiy1235,24.6009,103.713,Axi Yi
+azhe1235,24.405,103.441,Azhe
+sani1269,24.278,103.759,Sani
+sout2719,22.909678,103.101616,Awu
+lawu1238,24.133878,101.498795,Lawu
+buyu1238,22.0,101.08,Buyuan Jinuo
+youl1235,22.0473,101.057,Youle Jinuo
+cosa1234,21.616667,101.566667,Cosao
+sila1247,21.6888,102.134,Sila
+phan1254,21.9387,101.978,Phana'
+phun1245,20.7996,100.957,Phunoi
+coon1239,22.3311,102.759,Côông
+sang1320,21.64,100.77,Sangkong
+pyen1239,20.759,100.029,Pyen
+bisu1244,20.8542,99.9862,Bisu
+laom1237,21.95,100.1,Laomian
+cauh1234,22.033922,102.046105,Cauho
+bant1298,21.725278,102.06,Bantang
+biyo1243,22.511,101.652,Biyo
+mpii1239,18.1717,100.21,Mpi
+kadu1253,22.2996,101.74,Kaduo
+enuu1235,22.95,101.85,Enu
+honi1244,23.2074,101.886,Honi
+muda1235,21.95,100.6,Muda
+akha1245,21.2309,100.964,Akha
+akeu1235,22.1959,101.0823,Akeu
+chep1243,22.1749,101.7501,Chepya
+hani1248,22.67753,102.851673333,Hani
+zauz1238,26.4572,98.8634,Zauzou
+nusu1239,26.7292,98.8801,Nusu
+inth1238,20.392,96.9388,Intha-Danu
+tavo1242,14.1078,98.194,Tavoyan
+nucl1310,20.7926,93.9665,Burmese
+rakh1245,20.527429,93.145906,Rakhine
+marm1234,22.759948,92.210748,Marma
+oldb1235,21.161961,94.897306,Old Burmese
+taun1248,20.4104,96.7401,Taungyo
+acha1249,24.3479,97.7438,Longchuan Achang
+lian1258,24.750556,98.303056,Lianghe Achang
+luxi1238,24.45,98.6,Luxi Achang
+ngoc1235,25.35,97.433333,Ngochang
+chas1234,26.1,98.75,Chashan
+lash1243,26.0992,98.5481,Lashi
+maru1249,24.942535,99.8338,Maru
+pela1242,24.2142,97.9183,Pela
+zaiw1241,24.1726,98.3643,Zaiwa
+hpon1238,24.4606,97.1142,Hpon
+maza1306,23.546095,105.516304,Maza
+mang1429,23.742269,105.431392,Mango (China)
+maan1239,23.555104,105.70091,Maang
+muan1234,23.631962,105.182285,Muangphe
+mond1267,23.446095,105.416304,Mondzi
+mant1265,23.1829,105.405,Mantsi
+kath1251,24.2,105.1,Thou-Kathu
+ugon1239,14.2408,100.098,Ugong
+pail1244,31.8,103.5,Pai-lang
+nort2724,26.925,99.656,Northern Bai
+cent2004,26.1666,99.7052,Central Bai
+sout2730,25.519,100.289,Southern Bai
+long1417,26.4,105.233333,Longjia
+lure1234,27.285,105.664,Luren
+caij1234,27.284,105.292,Caijia
+bang1369,27.95,93.15,Bangru
+saja1240,27.57952,92.77,Sajolang
+gong1251,27.066,91.1686,Gongduk
+anuu1241,21.5,93.05,Anu-Hkongso
+mruu1242,24.154,90.6317,Mru
+rawa1264,30.0742,80.8005,Rawat
+raut1239,28.9518,81.1617,Raute
+raji1240,28.6151,81.577,Raji
+chai1254,24.30438,93.866431,Chairel
+maky1235,26.3037,95.6045,Makyan Naga
+lein1237,26.4481,95.4,Leinong Naga
+khia1236,26.20076,95.016799,Khiamniungan Naga
+wanc1238,26.2581,94.8936,Wancho Naga
+phom1236,26.4715,94.7476,Phom Naga
+chan1313,26.4336,94.9536,Chang Naga
+kony1248,26.6823,95.0598,Konyak Naga
+pont1258,27.442461,96.772761,Ponthai
+nahe1238,27.238106,96.038901,Nahenic
+mukl1234,27.626127,96.427282,Muklomic
+tase1235,27.2572,96.3855,Pangwa Naga
+tikh1243,27.381782,96.024393,Tikhakic
+noct1238,27.152,95.3903,Nocte Naga
+tuts1235,27.161,95.8,Tutsa Naga
+burm1262,21.31928,95.897864,Burma Pyu
+tama1328,25.1566,95.1171,Taman (Myanmar)
+chak1270,21.4134,92.5953,Chak
+seng1275,24.945633,93.881401,Sengmai
+andr1246,24.754303,94.033796,Andro
+phay1241,24.84615,93.81704,Phayeng
+kado1242,21.5259,100.092,Kado
+sing1264,27.296,95.606,Northern Jinghpaw
+kach1280,25.4634,97.3278,Southern Jinghpaw
+koch1250,25.7962,90.2566,Koch
+rabh1238,25.8248,91.1689,Rabha
+aton1241,25.346508,90.658722,Atong (India)
+ruga1238,25.506,91.469,Ruga
+garo1247,25.2954,90.462,Garo
+tiwa1253,26.0667,92.2583,Tiwa (India)
+bodo1269,26.1,92.0,Bodo-Mech
+kach1279,26.6882,92.317,Kachari
+dima1251,25.4198,93.1806,Dimasa
+kokb1239,23.1916,91.4673,Kok Borok
+tipp1239,23.5864,92.0747,Tippera
+usui1238,23.0131,91.7879,Usui
+rian1262,23.6803,92.0321,Riang (India)
+deor1238,26.86152,93.70572,Deori
+darm1243,29.8629,80.5439,Darma
+zhan1239,31.066667,81.3125,Zhangzhung
+byan1241,29.92002,80.63653,Byangsi
+chau1259,29.7033,80.4832,Chaudangsi
+rang1266,29.2278,80.0845,Rangkas
+suna1241,31.808,78.4513,Sunam
+rong1264,30.528,79.567,Rongpo
+gahr1239,32.2168,77.9596,Bunan
+patt1248,32.6963,76.5966,Pattani
+tina1246,32.2852,77.9912,Tinani
+kana1283,32.2843,77.1553,Kanashi
+shum1243,31.6862,78.3865,Shumcho
+jang1254,31.5666,78.4344,Jangshung
+kinn1249,31.3688,78.3148,Kinnauri
+chit1279,31.2965,78.5287,Chhitkul-Rakchham
+basu1243,29.986842,93.881454,Basum
+kala1376,27.073067,92.142965,Kalaktang Monpa
+tsha1245,27.3694,91.7741,Tshangla
+dakp1242,27.3762,91.8245,Dakpakha
+dzal1238,27.7855,91.374,Dzalakha
+kurt1248,27.5365,90.9822,Kurtokha
+bumt1240,27.6494,90.8037,Bumthangkha
+khen1241,27.0879,90.8633,Khengkha
+chal1267,27.3231,91.262,Chalikha
+nyen1254,27.3732,90.3947,Upper Mangdep
+olek1239,27.2079,90.5546,Olekha
+clas1254,29.24,92.01,Classical Tibetan
+balt1258,34.4491,77.2859,Balti
+puri1258,34.3386,76.0127,Purik-Sham-Nubra
+lada1244,33.468,80.6013,Leh Ladakhi
+chan1309,34.0662,78.2389,Changthang
+zang1248,33.2397,77.4013,Zangskari
+amdo1237,34.5177,100.485,Amdo Tibetan
+gser1236,31.90336,100.8677,Gser-Rdo
+zhon1235,32.43582,103.44179,Zhongu
+chon1285,27.7552,99.8255,Choni
+baim1244,33.1001,103.952,Baima
+brok1249,27.6544,90.648,Dur Brokkat
+brok1248,27.3438,91.9972,Brokpake
+kham1283,28.9930167,94.89439116,Khamba
+lakh1240,27.6325,90.3336,Lakha
+choc1275,27.46961,91.21954,Chocangacakha
+sikk1242,27.85795,88.59153,Sikkimese
+luna1243,28.1288,90.1257,Lunanakha
+laya1253,28.0499,89.7177,Layakha
+dzon1239,27.410786,89.581604,Dzongkha
+grom1238,27.6089,88.8541,Groma
+tibe1272,28.3681,90.1872,Tibetan
+huml1238,30.1451,81.5659,Humla
+sher1255,27.674,86.9994,Solu-Khumbu Sherpa
+naab1241,27.6926,87.3409,Naaba
+jire1238,27.6931,86.3201,Jirel
+dolp1239,29.1957,83.2927,Dolpo
+tich1238,28.9506,83.4672,Tichurong
+lhom1239,27.5948,87.7161,Lhomi
+lowa1242,29.0324,83.8959,Lowa
+mugo1238,30.8983,79.4664,Mugom
+walu1241,27.695,87.2374,Walungge
+kaga1252,27.4492,86.1675,Kagate
+hela1238,27.9212,85.6289,Lamjung-Melamchi Yolmo
+tsum1240,28.4719,85.0817,Tsum
+nubr1241,28.5092,84.7772,Gyalsumdo-Nubri
+kyer1238,28.2922,85.4257,Kyerung
+stod1241,32.497,77.116,Stod Bhoti
+spit1240,32.526,77.833,Spiti Bhoti
+jadd1243,30.241,79.153,Jad
+bhot1235,31.8503,78.5728,Bhoti Kinnauri
+kham1282,31.9313,91.7062,Khams Tibetan
+tsek1238,27.8046,89.1931,Tseku
+kaik1246,28.853,83.1384,Kaike
+sout2715,28.106,84.8511,Southern Ghale
+nort2709,28.2332,84.929,Northern Ghale
+kuta1241,28.3808,84.93,Kutang Ghale
+west2415,28.0239,85.0563,Western Tamang
+east2347,27.3239,87.0832,Eastern Tamang
+east2346,28.2213,84.9451,Eastern Gorkha Tamang
+guru1261,27.41687,86.28988,Gurung
+narp1239,28.76714,84.22852,Nar Phu
+mana1288,28.6416,84.0515,Manange
+chan1310,28.684,83.4488,Chantyal
+thak1245,28.7014,83.6466,Thakali
+seke1240,28.9251,83.8064,Seke (Nepal)
+dhim1246,26.6283,88.3798,Dhimal
+toto1302,26.67,88.975,Toto
+idum1241,29.4473,95.6472,Idu
+diga1241,28.4993,96.8803,Tawra
+zakh1243,28.129,97.022,Zakhring
+miju1243,28.4732,97.0444,Kman
+bori1243,27.62812,94.3538,Bori-Karko
+misi1242,27.418,94.69,Mising-Padam-Miri-Minyong
+tang1377,28.95,94.98,Tangam
+damu1236,29.483,95.5,Damu
+boka1249,28.61433,94.066429,Bokar-Ramo
+nyis1236,27.278263,93.675529,Nyishi-Hill Miri
+naaa1245,28.431524,93.248908,Na
+tagi1241,27.986064,94.221711,Tagin
+galo1242,27.9805586,94.6884956,Galo
+apat1240,27.1933,93.7284,Apatani
+mila1245,28.5539908,95.186127,Milang
+koro1316,27.214804,92.633011,Koro
+maon1238,25.3836,94.0035,Mao Naga
+poum1235,25.1944,94.4618,Poumei Naga
+chok1243,25.5636,94.2887,Chokri Naga
+anga1288,25.6841,93.8668,Angami Naga
+khez1235,25.7078,94.3114,Khezha Naga
+poch1243,25.4478,94.1119,Pochuri Naga
+nort2725,26.4492,94.5683,Northern Rengma Naga
+sumi1235,25.9996,94.4235,Sumi Naga
+sout2732,26.1178,94.6853,Southern Rengma Naga
+long1375,25.5578,94.9838,Long Phuri Naga
+maku1273,26.6,94.95,Makuri Naga
+para1302,26.2072,95.1618,Jejara Naga
+yimc1240,25.7675,94.8087,Yimchungru Naga
+aona1235,26.3241,94.3824,Ao Naga
+loth1237,26.01396,94.04355,Lotha Naga
+sang1321,25.8581,94.6279,Sangtam Naga
+mani1292,24.4409,93.3426,Manipuri
+sumt1234,20.1238,93.8367,Sumtu Chin
+asho1236,21.393,93.5069,Asho Chin
+munc1235,20.289,94.3929,Mün Chin
+daai1236,20.7347,93.7853,Daai Chin
+kaan1248,21.5091,93.6262,Kaang Chin
+ngal1291,23.312,92.83,Nga La
+chin1478,20.0776,94.0506,Chinbon Chin
+reng1255,21.710864,92.367939,Rengmitca
+khum1248,22.87125,92.9894633333,Khumi Chin
+mroc1235,19.71,93.995,Mro Chin
+east2779,21.3425,93.155,Eastern Khumi Chin
+pait1244,24.0381,93.6136,Paite Chin
+thad1238,24.096,93.722,Thado Chin
+ralt1242,25.0201,94.7381,Ralte
+khar1288,25.2738,94.0503,Kharam Naga
+tedi1235,23.6079,93.519,Tedim Chin
+puru1266,25.3887,95.0935,Purum
+zouu1235,24.0649,93.9253,Zou
+simt1238,24.5444,93.3265,Simte
+ngaw1239,21.93031,93.58348,Ngawn Chin
+siyi1240,23.8192,93.6884,Sizang Chin
+vaip1239,24.1378,93.7195,Vaiphei
+gang1266,24.5113,94.1681,Gangte
+pank1249,22.4124,92.4581,Pangkhua
+biet1238,24.273507,92.94342,Biete
+saka1283,25.994,93.949,Sakachep-Chorei
+hran1239,24.4559,93.351,Hrangkhol
+hmar1241,24.7534,93.5497,Hmar
+syri1242,24.9437,92.9029,Syriem
+darl1242,23.992,91.3339,Darlong
+lush1249,22.6138,92.6247,Mizo
+tawr1235,22.4996,94.0957,Laamtuk Thet
+fala1243,23.7892833333,92.3254633333,Falam Chin
+bual1235,22.91,93.68,Bualkhaw Chin
+bawm1236,22.4405233333,92.92553,Bawm Chin
+haka1240,22.8735,92.8208,Haka Chin
+zotu1235,22.5298,93.29,Zotung Chin
+laut1236,22.2009,93.4448,Lautu
+mara1382,22.1138,93.0387,Mara Chin
+zyph1238,22.524,93.264,Zyphe
+shen1247,22.1901,92.591,Shendu
+sent1260,21.8936,93.8087,Senthang Chin
+tara1313,24.4003,94.1703,Tarao
+chot1239,24.3722,94.2408,Chothe
+sorb1250,24.7473696,94.315422,Sorbung
+aimo1244,24.6437,94.3556,Aimol
+koir1240,25.2857,94.2141,Koireng
+lamk1238,24.1523,94.2706,Lamkang
+anal1239,24.0506,94.2806,Anal
+komi1270,24.8688,94.534,Kom (India)
+chir1283,25.4643,94.4072,Chiru
+moyo1238,24.4793,94.3421,Moyon
+mons1234,24.5322,94.2164,Monsang Naga
+rang1267,23.819438,91.66491,Halam
+karb1241,25.7317,93.0462,Hills Karbi
+amri1238,26.024,91.482,Amri Karbi
+khoi1251,24.2041,94.1345,Khoibu
+mari1416,24.2854,94.0723,Maring Naga
+khan1277,25.73633,94.247299,Southern Tangkhul Naga
+nort3286,25.247878,94.551996,Northern Tangkhul Naga
+nort3287,25.156667,94.204722,North-Central Tangkhul Naga
+tang1336,25.0489,94.3567,East-Central Tangkhul Naga
+suan1234,25.4333,94.5803,Suansu
+than1255,25.3472,93.8396,Thangal Naga
+lian1251,25.16,93.542,Liangmai Naga
+mzie1235,25.4779,93.71,Mzieme Naga
+zeme1240,25.3499,93.6463,Zeme Naga
+rong1266,25.098,93.7869,Rongmei Naga
+mara1379,25.4378,94.2205,Maram Naga
+pwow1235,17.3622,97.7044,Pwo Western Karen
+pwoe1235,15.1915,98.7355,Pwo Eastern Karen
+phra1235,18.0048,99.6382,Phrae Pwo Karen
+pwon1235,18.016,98.2709,Pwo Northern Karen
+paok1235,20.211,97.5969,Pa'o Karen
+paku1238,18.8137,97.1203,Paku Karen
+sgaw1245,17.9872,97.7126,S'gaw Karen
+wewa1238,19.020577,96.540526,Wewaw
+kaya1315,19.5183,97.4138,Kayan Lahwi
+yinb1236,19.0383,97.2134,Yinbaw Karen
+geko1235,19.6741,96.5308,Geko Karen
+zaye1235,20.16,96.908,Lahta-Zayein Karen
+bwek1238,18.9796,96.9936,Bwe Karen
+geba1237,19.4991,96.9492,Geba Karen
+mobw1234,19.0443,96.6027,Mobwa Karen
+east2342,19.8939,98.3359,Eastern Kayah
+west2409,18.687,97.4877,Western Kayah
+yint1235,18.9378,97.3368,Yintale Karen
+manu1255,19.165,96.9531,Manumanaw Karen
+brek1238,19.0561,96.8365,Brek Karen
+namm1235,36.11,99.43,Nam
+rawa1265,27.1027,97.0738,Rawang
+drun1238,28.00792,98.49449,Drung
+nung1282,27.2887,98.7333,Nung (Myanmar)
+puxi1243,25.37,118.68,Pu-Xian Chinese
+minn1241,24.5,118.17,Min Nan Chinese
+mind1253,26.0,119.5,Min Dong Chinese
+minz1235,26.0686,117.376,Min Zhong Chinese
+minb1244,27.05,118.32,Min Bei Chinese
+lite1248,34.09,109.05,Literary Chinese
+xian1251,27.66847,111.47112,Xiang Chinese
+wuch1236,29.8621,119.682,Wu Chinese
+huiz1242,29.7646,118.232,Hui Chinese
+ganc1239,27.9896,115.166,Gan Chinese
+sout3250,23.011,108.093,Southern Pinghua
+nort3268,25.218,110.045,Northern Pinghua
+yuec1235,23.0,113.0,Yue Chinese
+quji1234,24.816667,113.6,Qujiang Hakka-Shibei Shaoguan Tuhua
+hezh1244,35.59,103.197,Hezhou
+wutu1241,35.269,101.957,Wutunhua
+tang1373,35.803799,103.54273,Tangwang
+gang1272,35.55,102.43,Gangou
+dung1253,42.7292,76.8382,Dungan
+mand1415,40.0209,116.228,Mandarin Chinese
+daoh1239,30.0325,101.007222,Daohua
+jiny1235,38.8284,111.278,Jinyu Chinese
+midd1344,34.27,108.9,Middle Chinese
+hakk1236,25.0,116.0,Hakka Chinese
+oldc1244,36.12,114.32,Old Chinese
+waxi1236,28.644,110.362,Waxianghua

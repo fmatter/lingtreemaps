@@ -4,7 +4,9 @@ from Bio import Phylo
 from pathlib import Path
 from lingtreemaps.cli import load_conf
 
+
 dic = {1: "A", 2: "B", 3: "C"}
+
 
 for f in Path(".").glob("*.csv"):
     name = f.stem

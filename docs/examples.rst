@@ -51,6 +51,15 @@ Tungusic
 .. image:: examples/tung1282.svg
     :width: 100%
 
+Trans-Himalayan
++++++++++
+
+.. include:: examples/sino1245.yaml
+   :literal:
+
+.. image:: examples/sino1245.svg
+    :width: 100%
+
 Examples from the wild
 ************************
 These are maps created with ``lingtreemaps`` for actual presentations or publications.
