@@ -11,10 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `leaf_lw` (default: from pyplot): line width of tree branches
 * `connection_lw` (default: 1): line width of the leaf-map connections
 * `map_marker_lw` (default: 1): line width of the circles on the map
+* `color_tree` (default: false): color the lines leading to colored nodes
+* `nonterminal_nodes` (default: false): put circle markers onto proto-notes
 
 ### Removed
 
 ### Changed
+* if proto-nodes are present in the value dataframe, their values can be shown by activating `color_tree` and/or `nonterminal_nodes`
 
 ### Fixed
 

@@ -60,8 +60,12 @@ def download_glottolog_tree(root, df=None):
 
 def get_glottolog_csv(glottocode):
     try:
-        from cldfbench.catalogs import Glottolog  # pylint: disable=import-outside-toplevel
-        from cldfbench.catalogs import pyglottolog  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import (
+            Glottolog,
+        )  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import (
+            pyglottolog,
+        )  # pylint: disable=import-outside-toplevel
     except ImportError:
         log.error("Please run pip install cldfbench[glottolog]")
         sys.exit()
@@ -120,6 +124,8 @@ def plot_map(  # noqa: MC0001
     external_map_padding,
     font_size,
     print_labels,
+    nonterminal_nodes,
+    color_tree,
     text_x_offset,
     text_y_offset,
     base_padding,
@@ -136,9 +142,12 @@ def plot_map(  # noqa: MC0001
     water_color = "lightgray"
     default_color = "orange"
     if feature_df is not None:
+        if "Clade" not in feature_df.columns or "Value" not in feature_df.columns:
+            raise ValueError("Feature dataframe has to have columns 'Clade' and 'Value'")
         lg_df = pd.merge(
-            lg_df, feature_df, left_on=id_col, right_on="Clade", how="left"
+            lg_df, feature_df, left_on=id_col, right_on="Clade", how="outer"
         )  # insert feature values into language table
+        lg_df[id_col] = lg_df.apply(lambda x: x["Clade"] if pd.isnull(x[id_col]) else x[id_col], axis=1)
         if color_dict is None:
             values = []
             for x in list(feature_df["Value"]):
@@ -166,6 +175,8 @@ def plot_map(  # noqa: MC0001
     gdf = gpd.GeoDataFrame(
         lg_df, geometry=gpd.points_from_xy(lg_df.Longitude, lg_df.Latitude)
     )  # convert to a geodataframe
+
+    gdf.dropna(inplace=True, subset=["Latitude", "Longitude"])
 
     bounds = gdf.geometry.total_bounds  # outer boundaries of the language points
     rect = shapely.geometry.box(*bounds)  # as a shapely entity
@@ -353,6 +364,14 @@ def plot_map(  # noqa: MC0001
     to: {tree_baseline+tree_depth-child_depth}
     """
                 )
+                if color_tree:
+                    node_entries = lg_df[lg_df[id_col] == child.name]
+                    if len(node_entries) > 0:
+                        color = node_entries.iloc[0]["color"]
+                    else:
+                        color = "black"
+                else:
+                    color = "black"
                 ax.hlines(
                     sideline - get_clade_middle(child),
                     tree_baseline - clade_depth,
@@ -369,7 +388,9 @@ def plot_map(  # noqa: MC0001
                     for point in gdf[gdf[id_col] == child.name].to_dict("records"):
                         map_node = (point["geometry"].x, point["geometry"].y)
                         if print_labels:
-                            label_text = gdf[gdf[id_col] == child.name].iloc[0][label_column]
+                            label_text = gdf[gdf[id_col] == child.name].iloc[0][
+                                label_column
+                            ]
                         else:
                             label_text = ""
                         ax.annotate(
@@ -404,6 +425,20 @@ def plot_map(  # noqa: MC0001
                     )
                     ax.add_patch(circle)
                 else:
+                    if nonterminal_nodes and child.name in color_dic:
+                        circle = plt.Circle(
+                            (
+                                tree_baseline - child_depth,
+                                sideline - get_clade_middle(child),
+                            ),
+                            leaf_marker_size,
+                            facecolor=color_dic[child.name],
+                            edgecolor="black",
+                            zorder=99,
+                            lw=leaf_lw,
+                        )
+                        ax.add_patch(circle)
+
                     draw_clade(child, color, lw)
 
     if feature_df is not None:
@@ -448,7 +483,8 @@ def plot_map(  # noqa: MC0001
     mask.plot(ax=ax, color="white", alpha=1, edgecolor="black", lw=0.5)
     tree_lw = tree_lw or plt.rcParams["lines.linewidth"]
 
-    draw_clade(tree.root, "black", tree_lw)
+    tree_color = color_dic.get(tree.root.name, "black")
+    draw_clade(tree.root, tree_color, tree_lw)
 
     def get_attribution_position(position):
         if position == "bottomleft":
