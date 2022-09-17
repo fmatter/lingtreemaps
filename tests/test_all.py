@@ -11,12 +11,8 @@ from lingtreemaps.cli import plot as cli_plot
 def test_cli_download(data, tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     runner = CliRunner()
-    runner.invoke(
-        download_tree, args=["cari1283", "--languages", data / "cariban.csv", "--plot"]
-    )
+    runner.invoke(download_tree, args=["cari1283"])
     assert (tmp_path / "cari1283.nwk").is_file()
-    assert (tmp_path / "cari1283.svg").is_file()
-    runner.invoke(download_tree, args=["cari1283", "--get-languages", "--plot"])
 
 
 def test_cli_plot(data, tmp_path, monkeypatch):
@@ -65,7 +61,7 @@ def get_features(df):
 
 def test_plot0(data, tmp_path, monkeypatch):
     df = pd.read_csv(data / "cariban.csv")
-    tree = download_glottolog_tree("cari1283")
+    tree = Phylo.read(data / "cariban.newick", "newick")
     plot(
         df,
         tree,
@@ -78,7 +74,7 @@ def test_plot0(data, tmp_path, monkeypatch):
 
 def test_plot1(data, tmp_path, monkeypatch):
     df = pd.read_csv(data / "cariban.csv")
-    tree = download_glottolog_tree("cari1283")
+    tree = Phylo.read(data / "cariban.newick", "newick")
     plot(
         df,
         tree,
@@ -91,7 +87,7 @@ def test_plot1(data, tmp_path, monkeypatch):
 
 def test_plot2(data, tmp_path, monkeypatch):
     df = pd.read_csv(data / "cariban.csv")
-    tree = download_glottolog_tree("cari1283")
+    tree = Phylo.read(data / "cariban.newick", "newick")
     plot(
         df,
         tree,
