@@ -3,7 +3,7 @@ font_size: 5
 tree_map_padding: 0.19
 legend_position: lower right
 tree_depth: 0.3
-leaf_marker_size: 0.015
 map_marker_size: 25
 seaborn_palette: pastel
 background: osm
+text_y_offset: 0.009

@@ -14,7 +14,11 @@ import yaml
 from Bio import Phylo
 from matplotlib import patheffects
 from matplotlib.patches import Patch
-
+import matplotlib
+import shapely
+import warnings
+from shapely.errors import ShapelyDeprecationWarning
+warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 
 handler = colorlog.StreamHandler(None)
 handler.setFormatter(
@@ -36,6 +40,7 @@ except ImportError:  # pragma: no cover
     from importlib_resources import files  # pragma: no cover
 
 data_path = files("lingtreemaps") / "data"
+plt.rcParams.update({"hatch.color": "white"})
 
 
 def download_glottolog_tree(root, df=None):
@@ -60,8 +65,12 @@ def download_glottolog_tree(root, df=None):
 
 def get_glottolog_csv(glottocode):
     try:
-        from cldfbench.catalogs import Glottolog  # pylint: disable=import-outside-toplevel
-        from cldfbench.catalogs import pyglottolog  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import (
+            Glottolog,
+        )  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import (
+            pyglottolog,
+        )  # pylint: disable=import-outside-toplevel
     except ImportError:
         log.error("Please run pip install cldfbench[glottolog]")
         sys.exit()
@@ -113,6 +122,7 @@ def plot_map(  # noqa: MC0001
     internal_map_padding,
     seaborn_palette,
     color_dict,
+    hatch_dict,
     legend_position,
     leaf_marker_size,
     leaf_lw,
@@ -124,6 +134,7 @@ def plot_map(  # noqa: MC0001
     print_labels,
     nonterminal_nodes,
     color_tree,
+    hatching,
     text_x_offset,
     text_y_offset,
     base_padding,
@@ -141,16 +152,20 @@ def plot_map(  # noqa: MC0001
     default_color = "orange"
     if feature_df is not None:
         if "Clade" not in feature_df.columns or "Value" not in feature_df.columns:
-            raise ValueError("Feature dataframe has to have columns 'Clade' and 'Value'")
+            raise ValueError(
+                "Feature dataframe has to have columns 'Clade' and 'Value'"
+            )
         lg_df = pd.merge(
             lg_df, feature_df, left_on=id_col, right_on="Clade", how="outer"
         )  # insert feature values into language table
-        lg_df[id_col] = lg_df.apply(lambda x: x["Clade"] if pd.isnull(x[id_col]) else x[id_col], axis=1)
+        lg_df[id_col] = lg_df.apply(
+            lambda x: x["Clade"] if pd.isnull(x[id_col]) else x[id_col], axis=1
+        )
+        values = []
+        for x in list(feature_df["Value"]):
+            if x not in values:
+                values.append(x)
         if color_dict is None:
-            values = []
-            for x in list(feature_df["Value"]):
-                if x not in values:
-                    values.append(x)
             palette = sns.color_palette(
                 seaborn_palette, len(values)
             )  # generate palette
@@ -159,12 +174,34 @@ def plot_map(  # noqa: MC0001
             )  # what value corresponds to what color?
         else:
             value_color_dic = color_dict
+        if hatching and hatch_dict is None:
+            value_hatch_dic = dict(
+                zip(
+                    values,
+                    [
+                        "///",
+                        "\\\\\\",
+                        "|||",
+                        "---",
+                        "+++",
+                        "xxx",
+                        "ooo",
+                        "O00",
+                        "...",
+                        "***",
+                    ],
+                )
+            )
+            hatch_dict = {}
+        else:
+            value_hatch_dic = hatch_dict
         lg_df["color"] = lg_df["Value"].apply(
             lambda x: value_color_dic.get(x, (0, 0, 0, 0))
         )  # use transparent color for missing values
         color_dic = dict(
             zip(lg_df[id_col], lg_df["color"])
         )  # what (leaf) name corresponds to what color?
+
     else:
         lg_df["color"] = default_color
         color_dic = {}
@@ -246,7 +283,6 @@ def plot_map(  # noqa: MC0001
     leaf_count = len(tree.get_terminals())
     map_height = abs(gdf.geometry.total_bounds[1] - gdf.geometry.total_bounds[3])
     leaf_spacing = map_height / leaf_count
-    leaf_marker_size = leaf_marker_size or leaf_spacing * 0.3
 
     bounds = gdf.geometry.total_bounds  # tight box around the points
     internal_map_padding = internal_map_padding or leaf_spacing * 0.5
@@ -269,9 +305,6 @@ def plot_map(  # noqa: MC0001
         bounds[3] + internal_map_padding,
     ]  # larger padding box
     visible_map_rect = shapely.geometry.box(*visible_map)
-
-    text_x_offset = text_x_offset or leaf_marker_size * 1.3
-    text_y_offset = text_y_offset or leaf_marker_size * 0.4
 
     base_padding = base_padding or tree_depth * 0.05
 
@@ -306,14 +339,35 @@ def plot_map(  # noqa: MC0001
     else:
         ax.axis("off")
 
-    gdf.plot(
-        ax=ax,
-        markersize=map_marker_size,
-        facecolor=gdf["color"],
-        linewidth=map_marker_lw,
-        edgecolor="black",
-        zorder=99,
-    )
+    leaf_df = gdf.copy()
+
+    if hatching:
+        for value, hatch in hatch_dict.items():
+            gdf[gdf["Value"] == value].plot(
+                ax=ax,
+                markersize=map_marker_size,
+                facecolor=gdf[gdf["Value"] == value]["color"],
+                linewidth=map_marker_lw,
+                zorder=99,
+                hatch=hatch,
+            )
+        gdf[pd.isnull(gdf["Value"])].plot(
+            ax=ax,
+            markersize=map_marker_size,
+            facecolor=gdf[pd.isnull(gdf["Value"])]["color"],
+            linewidth=map_marker_lw,
+            edgecolor="black",
+            zorder=88,
+        )
+    else:
+        gdf.plot(
+            ax=ax,
+            markersize=map_marker_size,
+            facecolor=gdf["color"],
+            linewidth=map_marker_lw,
+            edgecolor="black",
+            zorder=99,
+        )
 
     leaf_positions = {}
     i = 0
@@ -382,6 +436,12 @@ def plot_map(  # noqa: MC0001
                         tree_baseline - child_depth,
                         sideline - get_clade_middle(child),
                     )
+                    leaf_df["geometry"] = leaf_df.apply(
+                        lambda x: shapely.geometry.Point(leaf_coords)
+                        if x[id_col] == child.name
+                        else x["geometry"],
+                        axis=1,
+                    )
                     node_alpha = 1
                     for point in gdf[gdf[id_col] == child.name].to_dict("records"):
                         map_node = (point["geometry"].x, point["geometry"].y)
@@ -413,15 +473,6 @@ def plot_map(  # noqa: MC0001
                         )
                         if node_alpha == 1:
                             node_alpha = 0
-                    circle = plt.Circle(
-                        leaf_coords,
-                        leaf_marker_size,
-                        facecolor=color_dic.get(child.name, default_color),
-                        edgecolor="black",
-                        zorder=99,
-                        lw=leaf_lw,
-                    )
-                    ax.add_patch(circle)
                 else:
                     if nonterminal_nodes and child.name in color_dic:
                         circle = plt.Circle(
@@ -441,10 +492,16 @@ def plot_map(  # noqa: MC0001
 
     if feature_df is not None:
         # https://www.python-graph-gallery.com/how-to-use-rectangles-in-matplotlib-legends
-        handles = [
-            Patch(facecolor=color, label=label)
-            for label, color in value_color_dic.items()
-        ]
+        if hatching:
+            handles = [
+                matplotlib.patches.Circle((0.5, 0.5), 1, label=label, facecolor=value_color_dic.get(label, default_color), linewidth=3, hatch=value_hatch_dic.get(label, None))
+                for label, color in value_color_dic.items()
+            ]
+        else:
+            handles = [
+                Patch(facecolor=color, label=label)
+                for label, color in value_color_dic.items()
+            ]
 
         bbox_coords = (
             visible_map[0],
@@ -483,6 +540,34 @@ def plot_map(  # noqa: MC0001
 
     tree_color = color_dic.get(tree.root.name, "black")
     draw_clade(tree.root, tree_color, tree_lw)
+
+    if hatching:
+        for value, hatch in hatch_dict.items():
+            leaf_df[leaf_df["Value"] == value].plot(
+                ax=ax,
+                markersize=leaf_marker_size,
+                facecolor=leaf_df[leaf_df["Value"] == value]["color"],
+                linewidth=leaf_lw,
+                zorder=99,
+                hatch=hatch,
+            )
+        leaf_df[pd.isnull(leaf_df["Value"])].plot(
+            ax=ax,
+            markersize=leaf_marker_size,
+            facecolor=leaf_df[pd.isnull(leaf_df["Value"])]["color"],
+            linewidth=leaf_lw,
+            edgecolor="black",
+            zorder=99,
+        )
+    else:
+        leaf_df.plot(
+            ax=ax,
+            markersize=leaf_marker_size,
+            facecolor=leaf_df["color"],
+            linewidth=leaf_lw,
+            edgecolor="black",
+            zorder=99,
+        )
 
     def get_attribution_position(position):
         if position == "bottomleft":

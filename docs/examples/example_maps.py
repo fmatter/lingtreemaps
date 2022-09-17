@@ -7,12 +7,11 @@ from lingtreemaps.cli import load_conf
 
 dic = {1: "A", 2: "B", 3: "C"}
 
-# w = "chib1249"
+w = "dogo1299"
 # w = "sino1245"
 for f in Path(".").glob("*.csv"):
     name = f.stem
     if "_data" in name: continue
-    print(name)
     # if name != w: continue
     df = pd.read_csv(f"{name}.csv")
     # print(df)

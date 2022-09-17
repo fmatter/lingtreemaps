@@ -3,7 +3,7 @@ tree_lw: 0.2
 rotation: 90
 tree_sort_mode: max
 map_marker_size: 4
-leaf_marker_size: 0.005
 connection_lw: 0.2
 leaf_lw: 0.1
 map_marker_lw: 0.3
+leaf_marker_size: 0.5

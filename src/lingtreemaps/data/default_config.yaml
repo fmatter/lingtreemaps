@@ -45,12 +45,18 @@ seaborn_palette: "bright"
 # seaborn_palette
 color_dict: null
 
+# Use hatch patterns?
+hatching: false
+
+# Custom value:hatch pattern associations
+hatch_dict: null
+
 # Position of the legend
 legend_position: "upper right"
 
 # Size of the circles at the leaves
 # If unspecified, lingtreemaps will guess.
-leaf_marker_size: null
+leaf_marker_size: 20
 
 # Line weight of the circles at the leaves
 leaf_lw: 1
@@ -75,12 +81,10 @@ external_map_padding: 0
 font_size: 4
 
 # x shift of leaf labels
-# If unspecified, lingtreemaps will guess.
-text_x_offset: null
+text_x_offset: 0.015
 
 # y shift of leaf labels
-# If unspecified, lingtreemaps will guess.
-text_y_offset: null
+text_y_offset: 0
 
 # Padding between the root of the tree and the image boundaries
 # If unspecified, lingtreemaps will guess.
