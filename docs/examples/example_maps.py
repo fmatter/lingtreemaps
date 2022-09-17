@@ -7,12 +7,15 @@ from lingtreemaps.cli import load_conf
 
 dic = {1: "A", 2: "B", 3: "C"}
 
-w = "chib1249"
+# w = "chib1249"
 # w = "sino1245"
 for f in Path(".").glob("*.csv"):
     name = f.stem
-    if name != w: continue
+    if "_data" in name: continue
+    print(name)
+    # if name != w: continue
     df = pd.read_csv(f"{name}.csv")
+    # print(df)
     df.sort_values(by="ID", inplace=True)
     if Path(f"{name}_data.csv").is_file():
         feature_df = pd.read_csv(f"{name}_data.csv")
