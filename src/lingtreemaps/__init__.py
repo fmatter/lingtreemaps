@@ -489,7 +489,14 @@ def plot_map(  # noqa: MC0001
         # https://www.python-graph-gallery.com/how-to-use-rectangles-in-matplotlib-legends
         if hatching:
             handles = [
-                matplotlib.patches.Circle((0.5, 0.5), 1, label=label, facecolor=value_color_dic.get(label, default_color), linewidth=3, hatch=value_hatch_dic.get(label, None))
+                matplotlib.patches.Circle(
+                    (0.5, 0.5),
+                    1,
+                    label=label,
+                    facecolor=value_color_dic.get(label, default_color),
+                    linewidth=3,
+                    hatch=value_hatch_dic.get(label, None),
+                )
                 for label, color in value_color_dic.items()
             ]
         else:
@@ -537,8 +544,7 @@ def plot_map(  # noqa: MC0001
     draw_clade(tree.root, tree_color, tree_lw)
 
     leaf_df["geometry"] = leaf_df.apply(
-        lambda x: shapely.geometry.Point(node_leafs[x[id_col]]),
-        axis=1,
+        lambda x: shapely.geometry.Point(node_leafs[x[id_col]]), axis=1
     )
 
     if hatching:
