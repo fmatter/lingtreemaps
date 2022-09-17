@@ -86,6 +86,8 @@ def get_glottolog_csv(glottocode):
 def plot(lg_df, tree, feature_df=None, text_df=None, **kwargs):
     with open(data_path / "default_config.yaml", "r", encoding="utf-8") as f:
         conf = yaml.load(f, Loader=yaml.SafeLoader)
+    if isinstance(text_df, str):
+        text_df = pd.read_csv(text_df, keep_default_na=False)
     conf.update(**kwargs)
     plot_map(lg_df, tree, feature_df, text_df, **conf)
 

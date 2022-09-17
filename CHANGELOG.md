@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 ### Changed
+* `text_df` can specify a filename, to be read with pandas
 
 ### Fixed
 
