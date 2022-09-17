@@ -28,19 +28,31 @@ def get_features(df):
     return pd.DataFrame.from_dict(data)
 
 
-
 def test_plot0(data, tmp_path, monkeypatch):
     df = pd.read_csv(data / "cariban.csv")
     df.rename(columns={"lat": "Latitude", "long": "Longitude"}, inplace=True)
     tree = download_glottolog_tree("cari1283")
-    plot(df, tree, feature_df=get_features(df), filename=tmp_path / "test", file_format="svg")
+    plot(
+        df,
+        tree,
+        feature_df=get_features(df),
+        filename=tmp_path / "test",
+        file_format="svg",
+    )
     assert (tmp_path / "test.svg").is_file()
+
 
 def test_plot1(data, tmp_path, monkeypatch):
     df = pd.read_csv(data / "cariban.csv")
     df.rename(columns={"lat": "Latitude", "long": "Longitude"}, inplace=True)
     tree = download_glottolog_tree("cari1283")
-    plot(df, tree, feature_df=get_features(df), filename=tmp_path / "test", file_format="svg")
+    plot(
+        df,
+        tree,
+        feature_df=get_features(df),
+        filename=tmp_path / "test",
+        file_format="svg",
+    )
     assert (tmp_path / "test.svg").is_file()
 
 
@@ -56,6 +68,6 @@ def test_plot2(data, tmp_path, monkeypatch):
         color_dict={"A": "red", "B": "green", "C": "yellow"},
         filename=tmp_path / "test",
         file_format="svg",
-        debug=True
+        debug=True,
     )
     assert (tmp_path / "test.svg").is_file()
