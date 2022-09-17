@@ -5,7 +5,7 @@ from click.testing import CliRunner
 from lingtreemaps import download_glottolog_tree
 from lingtreemaps import plot
 from lingtreemaps.cli import download_tree
-
+from lingtreemaps.cli import plot as cli_plot
 
 def test_cli_download(data, tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
@@ -13,6 +13,12 @@ def test_cli_download(data, tmp_path, monkeypatch):
     runner.invoke(download_tree, args=["cari1283", "--languages", data / "cariban.csv", "--plot"])
     assert (tmp_path / "cari1283.nwk").is_file()
     assert (tmp_path / "cari1283.svg").is_file()
+
+def test_cli_plot(data, tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    runner = CliRunner()
+    result = runner.invoke(cli_plot, args=[(data / "cariban.csv").as_posix(), (data / "cariban.newick").as_posix(), "--conf", (data/"cariban.yaml").as_posix(), "--output", "test.svg"], catch_exceptions=False)
+    assert (tmp_path / "test.svg").is_file()
 
 
 def get_features(df):
