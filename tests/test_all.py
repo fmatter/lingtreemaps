@@ -4,7 +4,7 @@ from Bio import Phylo
 from click.testing import CliRunner
 from lingtreemaps import download_glottolog_tree
 from lingtreemaps import plot
-from lingtreemaps.cli import download_tree
+from lingtreemaps.cli import download_tree, get_language_data
 from lingtreemaps.cli import plot as cli_plot
 
 def test_cli_download(data, tmp_path, monkeypatch):
@@ -13,12 +13,23 @@ def test_cli_download(data, tmp_path, monkeypatch):
     runner.invoke(download_tree, args=["cari1283", "--languages", data / "cariban.csv", "--plot"])
     assert (tmp_path / "cari1283.nwk").is_file()
     assert (tmp_path / "cari1283.svg").is_file()
+    runner.invoke(download_tree, args=["cari1283", "--get-languages", "--plot"])
+
+
+def test_cli_lg_data(data, tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    runner = CliRunner()
+    runner.invoke(get_language_data, args=["cari1283"], catch_exceptions=False)
+    assert (tmp_path / "cari1283.csv").is_file()
 
 def test_cli_plot(data, tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     runner = CliRunner()
     result = runner.invoke(cli_plot, args=[(data / "cariban.csv").as_posix(), (data / "cariban.newick").as_posix(), "--conf", (data/"cariban.yaml").as_posix(), "--output", "test.svg"], catch_exceptions=False)
     assert (tmp_path / "test.svg").is_file()
+
+    result = runner.invoke(cli_plot, args=[(data / "cariban.csv").as_posix(), (data / "cariban.newick").as_posix(), "--conf", (data/"cariban.yaml").as_posix()], catch_exceptions=False)
+    assert (tmp_path / "cariban.pdf").is_file()
 
 
 def get_features(df):
