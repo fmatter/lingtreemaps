@@ -1,23 +1,25 @@
 """Top-level package for lingtreemaps."""
 import logging
 import sys
+import warnings
 from io import StringIO
 import colorlog
 import contextily as cx
 import geopandas as gpd
+import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
 import seaborn as sns
+import shapely
 import shapely.geometry
 import yaml
 from Bio import Phylo
 from matplotlib import patheffects
 from matplotlib.patches import Patch
-import matplotlib
-import shapely
-import warnings
 from shapely.errors import ShapelyDeprecationWarning
+
+
 warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 
 handler = colorlog.StreamHandler(None)
@@ -65,12 +67,8 @@ def download_glottolog_tree(root, df=None):
 
 def get_glottolog_csv(glottocode):
     try:
-        from cldfbench.catalogs import (
-            Glottolog,
-        )  # pylint: disable=import-outside-toplevel
-        from cldfbench.catalogs import (
-            pyglottolog,
-        )  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import Glottolog  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import pyglottolog  # pylint: disable=import-outside-toplevel
     except ImportError:
         log.error("Please run pip install cldfbench[glottolog]")
         sys.exit()
@@ -382,6 +380,8 @@ def plot_map(  # noqa: MC0001
     tree_baseline = visible_map[0] - tree_map_padding
     sideline = bounds[-1] - leaf_spacing * 0.5
 
+    node_leafs = {}
+
     def draw_clade(clade, color, lw):
         lvl_line_start = get_clade_middle(clade.clades[0])
         lvl_line_end = get_clade_middle(clade.clades[-1])
@@ -436,12 +436,7 @@ def plot_map(  # noqa: MC0001
                         tree_baseline - child_depth,
                         sideline - get_clade_middle(child),
                     )
-                    leaf_df["geometry"] = leaf_df.apply(
-                        lambda x: shapely.geometry.Point(leaf_coords)
-                        if x[id_col] == child.name
-                        else x["geometry"],
-                        axis=1,
-                    )
+                    node_leafs[child.name] = leaf_coords
                     node_alpha = 1
                     for point in gdf[gdf[id_col] == child.name].to_dict("records"):
                         map_node = (point["geometry"].x, point["geometry"].y)
@@ -540,6 +535,11 @@ def plot_map(  # noqa: MC0001
 
     tree_color = color_dic.get(tree.root.name, "black")
     draw_clade(tree.root, tree_color, tree_lw)
+
+    leaf_df["geometry"] = leaf_df.apply(
+        lambda x: shapely.geometry.Point(node_leafs[x[id_col]]),
+        axis=1,
+    )
 
     if hatching:
         for value, hatch in hatch_dict.items():
