@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 * `text_df` can specify a filename, to be read with pandas
 
 ### Fixed
+* missing dependencies
 
 ## [0.0.2] -- 2022-09-17
 
