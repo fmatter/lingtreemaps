@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-* `hatching` for black-and-white maps with many values
 
 ### Removed
+
+### Changed
+
+### Fixed
+
+## [0.0.3] -- 2022-09-19
+
+### Added
+* `hatching` for black-and-white maps with many values
 
 ### Changed
 * `text_df` can specify a filename, to be read with pandas
@@ -34,6 +42,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Initial release
 
-[Unreleased]: https://github.com/fmatter/lingtreemaps/compare/0.0.2...HEAD
+[Unreleased]: https://github.com/fmatter/lingtreemaps/compare/0.0.3...HEAD
+[0.0.3]: https://github.com/fmatter/lingtreemaps/releases/tag/0.0.3
 [0.0.2]: https://github.com/fmatter/lingtreemaps/releases/tag/0.0.2
 [0.0.1]: https://github.com/fmatter/lingtreemaps/releases/tag/0.0.1
