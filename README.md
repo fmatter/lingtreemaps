@@ -10,6 +10,7 @@
 
 Plot data on linguistic trees and maps.
 Inspired by [phytools](http://blog.phytools.org/2019/03/projecting-phylogenetic-tree-onto-map.html), written in python.
-Quickstart: `lingtreemaps download-tree utoa1244 -g -p` (or some other glottocode).
 
-**[Documentation](https://lingtreemaps.readthedocs.io)**
+* Quickstart: `lingtreemaps download-tree utoa1244 -g -p` (or some other glottocode).
+
+* **[Documentation](https://lingtreemaps.readthedocs.io)**
