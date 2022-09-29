@@ -1,10 +1,11 @@
 """Top-level package for lingtreemaps."""
 import logging
 import sys
-import warnings
 import typing
-from pathlib import Path
+import warnings
 from io import StringIO
+from pathlib import Path
+import Bio.Phylo.Newick
 import colorlog
 import contextily as cx
 import geopandas as gpd
@@ -17,10 +18,10 @@ import shapely
 import shapely.geometry
 import yaml
 from Bio import Phylo
-import Bio.Phylo.Newick
 from matplotlib import patheffects
 from matplotlib.patches import Patch
 from shapely.errors import ShapelyDeprecationWarning
+
 
 __all__ = ['plot', 'get_glottolog_csv', 'download_glottolog_tree', 'load_conf']
 
