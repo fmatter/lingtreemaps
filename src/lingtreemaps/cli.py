@@ -5,7 +5,6 @@ from pathlib import Path
 import click
 import matplotlib.pyplot as plt
 import pandas as pd
-import yaml
 from Bio import Phylo
 import lingtreemaps
 
