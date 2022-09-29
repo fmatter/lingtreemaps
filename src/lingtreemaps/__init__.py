@@ -12,10 +12,10 @@ import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
-import yaml
 import seaborn as sns
 import shapely
 import shapely.geometry
+import yaml
 from Bio import Phylo
 import Bio.Phylo.Newick
 from matplotlib import patheffects
