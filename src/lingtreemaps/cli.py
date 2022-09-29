@@ -5,25 +5,11 @@ from pathlib import Path
 import click
 import matplotlib.pyplot as plt
 import pandas as pd
-import yaml
 from Bio import Phylo
 import lingtreemaps
 
 
 log = logging.getLogger(__name__)
-
-
-def load_conf(conf_file="lingtreemaps.yaml"):
-    confpath = Path(conf_file)
-    if confpath.is_file():
-        with open(confpath, "r", encoding="utf-8") as f:
-            data = yaml.load(f, yaml.SafeLoader)
-            if data is not None:
-                return data
-            log.warning(f"Empty config file: {confpath.resolve()}")
-            return {}
-    log.error(f"Config file {confpath.resolve()} not found.")
-    return {}
 
 
 @click.group()
@@ -64,7 +50,7 @@ def plot(
     tree = Phylo.read(tree, "newick")
     kwargs = dict(filename=filename, file_format="pdf", debug=debug)
     if conf:
-        kwargs.update(**load_conf(conf))
+        kwargs.update(**lingtreemaps.load_conf(conf))
     else:
         log.info("Provide a conf file to style your map.")
     if feature:

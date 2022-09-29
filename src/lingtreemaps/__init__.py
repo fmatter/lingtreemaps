@@ -2,6 +2,8 @@
 import logging
 import sys
 import warnings
+import typing
+from pathlib import Path
 from io import StringIO
 import colorlog
 import contextily as cx
@@ -15,10 +17,12 @@ import shapely
 import shapely.geometry
 import yaml
 from Bio import Phylo
+import Bio.Phylo.Newick
 from matplotlib import patheffects
 from matplotlib.patches import Patch
 from shapely.errors import ShapelyDeprecationWarning
 
+__all__ = ['plot', 'get_glottolog_csv', 'download_glottolog_tree', 'load_conf']
 
 warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 
@@ -43,6 +47,19 @@ except ImportError:  # pragma: no cover
 
 data_path = files("lingtreemaps") / "data"
 plt.rcParams.update({"hatch.color": "white"})
+
+
+def load_conf(conf_file: typing.Union[Path, str] = "lingtreemaps.yaml") -> dict:
+    confpath = Path(conf_file)
+    if confpath.is_file():
+        with open(confpath, "r", encoding="utf-8") as f:
+            data = yaml.load(f, yaml.SafeLoader)
+            if data is not None:
+                return data
+            log.warning(f"Empty config file: {confpath.resolve()}")
+            return {}
+    log.error(f"Config file {confpath.resolve()} not found.")
+    return {}
 
 
 def download_glottolog_tree(root, df=None):
@@ -90,7 +107,10 @@ def get_glottolog_csv(glottocode):
     return df
 
 
-def plot(lg_df, tree, feature_df=None, text_df=None, **kwargs):
+def plot(lg_df: pd.DataFrame,
+         tree: Bio.Phylo.Newick.Tree,
+         feature_df: typing.Optional[pd.DataFrame] = None,
+         text_df: typing.Optional[pd.DataFrame] = None, **kwargs):
     with open(data_path / "default_config.yaml", "r", encoding="utf-8") as f:
         conf = yaml.load(f, Loader=yaml.SafeLoader)
     if isinstance(text_df, str):
