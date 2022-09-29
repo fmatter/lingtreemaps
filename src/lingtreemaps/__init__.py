@@ -15,7 +15,6 @@ import requests
 import seaborn as sns
 import shapely
 import shapely.geometry
-import yaml
 from Bio import Phylo
 import Bio.Phylo.Newick
 from matplotlib import patheffects
