@@ -38,7 +38,7 @@ log.addHandler(handler)
 
 __author__ = "Florian Matter"
 __email__ = "florianmatter@gmail.com"
-__version__ = "0.0.4.dev"
+__version__ = "0.0.4"
 
 
 try:
