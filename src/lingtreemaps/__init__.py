@@ -20,12 +20,14 @@ import yaml
 from Bio import Phylo
 from matplotlib import patheffects
 from matplotlib.patches import Patch
-from shapely.errors import ShapelyDeprecationWarning
-
+try:
+    from shapely.errors import ShapelyDeprecationWarning
+    warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
+except ImportError:
+    pass
 
 __all__ = ['plot', 'get_glottolog_csv', 'download_glottolog_tree', 'load_conf']
 
-warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 
 handler = colorlog.StreamHandler(None)
 handler.setFormatter(
