@@ -60,7 +60,6 @@ def plot(
         lingtreemaps.plot(df, tree, feature_df, **kwargs)
     else:
         lingtreemaps.plot(df, tree, **kwargs)
-    plt.show()
 
 
 @main.command()
