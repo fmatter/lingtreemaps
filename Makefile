@@ -55,17 +55,12 @@ lint/black: ## check style with black
 
 lint: lint/flake8 lint/black ## check style
 
-test:
-	pytest
-
-test-all: ## run tests on every Python version with tox
-	tox
-
 coverage: ## check code coverage quickly with the default Python
 	pytest --cov
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
+
 
 docs: ## generate Sphinx HTML documentation, including API docs
 	sphinx-apidoc -o docs/ src
@@ -73,19 +68,26 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html
 
+
+changelog:
+	python3 etc/check_changelog.py
+	
 VERSION = $(shell yq -p=props .bumpversion.cfg | yq eval ".current_version"  )
 
 release:
-	python3 var/release.py
-	git commit -am "release $(VERSION)" 
-	git tag -a $(VERSION) -m"$(VERSION) release"
+	git push
+	python3 etc/changelog.py
+
+	python3 etc/citation.py
+	git commit -am "release v$(VERSION)" 
+	git tag -a "v$(VERSION)" -m"v$(VERSION) release"
 	git push; git push --tags
-	make pypi
+	make twine
 	bump2version patch
+	python3 etc/citation.py
 	git commit -am "bump"; git push
 
-
-pypi: dist ## package and upload a release
+twine: dist ## package and upload a release
 	twine upload dist/*
 
 dist: clean ## builds source and wheel package
@@ -95,6 +97,3 @@ dist: clean ## builds source and wheel package
 
 install: clean ## install the package to the active Python's site-packages
 	python setup.py install
-
-examples:
-	cd docs/examples; python3 example_maps.py
