@@ -77,7 +77,6 @@ VERSION = $(shell yq -p=props .bumpversion.cfg | yq eval ".current_version"  )
 release:
 	git push
 	python3 etc/changelog.py
-
 	python3 etc/citation.py
 	git commit -am "release v$(VERSION)" 
 	git tag -a "v$(VERSION)" -m"v$(VERSION) release"
