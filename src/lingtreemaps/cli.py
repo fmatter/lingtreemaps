@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from Bio import Phylo
 import lingtreemaps
+from lingtreemaps.helpers import read_data_file
 
 
 log = logging.getLogger(__name__)
@@ -44,7 +45,7 @@ def plot(
     Minimally required columns: ``ID``, ``Latitude``, ``Longitude``.
 
     TREE: A newick tree file."""
-    df = pd.read_csv(languages)
+    df = read_data_file(languages)
     if not filename:
         filename = Path(languages).stem
     tree = Phylo.read(tree, "newick")
@@ -54,7 +55,8 @@ def plot(
     else:
         log.info("Provide a conf file to style your map.")
     if feature:
-        feature_df = pd.read_csv(feature)
+        feature = Path(feature)
+        feature_df = read_data_file(feature)
         lingtreemaps.plot(df, tree, feature_df, **kwargs)
     else:
         lingtreemaps.plot(df, tree, **kwargs)
@@ -100,7 +102,7 @@ def download_tree(glottocode, languages, output_dir, get_languages, plot):
         df = lingtreemaps.get_glottolog_csv(glottocode)
         df.to_csv(Path(output_dir) / f"{glottocode}.csv", index=False)
     elif languages:
-        df = pd.read_csv(languages)
+        df = read_data_file(languages)
     else:
         log.warning(
             "If you do not provide CSV file with the language list, dialects without "

@@ -20,15 +20,17 @@ import yaml
 from Bio import Phylo
 from matplotlib import patheffects
 from matplotlib.patches import Patch
+from lingtreemaps.helpers import read_data_file
 
 
 try:
     from shapely.errors import ShapelyDeprecationWarning
+
     warnings.filterwarnings("ignore", category=ShapelyDeprecationWarning)
 except ImportError:
     pass
 
-__all__ = ['plot', 'get_glottolog_csv', 'download_glottolog_tree', 'load_conf']
+__all__ = ["plot", "get_glottolog_csv", "download_glottolog_tree", "load_conf"]
 
 
 handler = colorlog.StreamHandler(None)
@@ -112,14 +114,17 @@ def get_glottolog_csv(glottocode):
     return df
 
 
-def plot(lg_df: pd.DataFrame,
-         tree: Bio.Phylo.Newick.Tree,
-         feature_df: typing.Optional[pd.DataFrame] = None,
-         text_df: typing.Optional[pd.DataFrame] = None, **kwargs):
+def plot(
+    lg_df: pd.DataFrame,
+    tree: Bio.Phylo.Newick.Tree,
+    feature_df: typing.Optional[pd.DataFrame] = None,
+    text_df: typing.Optional[pd.DataFrame] = None,
+    **kwargs,
+):
     with open(data_path / "default_config.yaml", "r", encoding="utf-8") as f:
         conf = yaml.load(f, Loader=yaml.SafeLoader)
     if isinstance(text_df, str):
-        text_df = pd.read_csv(text_df, keep_default_na=False)
+        text_df = read_data_file(text_df, keep_default_na=False)
     conf.update(**kwargs)
     plot_map(lg_df, tree, feature_df, text_df, **conf)
 
