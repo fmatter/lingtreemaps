@@ -3,8 +3,6 @@ import logging
 import sys
 from pathlib import Path
 import click
-import matplotlib.pyplot as plt
-import pandas as pd
 from Bio import Phylo
 import lingtreemaps
 from lingtreemaps.helpers import read_data_file

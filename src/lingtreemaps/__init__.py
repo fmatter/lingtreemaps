@@ -91,8 +91,12 @@ def download_glottolog_tree(root, df=None):
 
 def get_glottolog_csv(glottocode):
     try:
-        from cldfbench.catalogs import Glottolog  # pylint: disable=import-outside-toplevel
-        from cldfbench.catalogs import pyglottolog  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import (
+            Glottolog,
+        )  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import (
+            pyglottolog,
+        )  # pylint: disable=import-outside-toplevel
     except ImportError:
         log.error("Please run pip install cldfbench[glottolog]")
         sys.exit()

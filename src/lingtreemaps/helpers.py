@@ -14,7 +14,9 @@ def read_data_file(filename, **kwargs):
         try:
             importlib.import_module("openpyxl")
         except ImportError:
-            raise ImportError("To work with excel files, please install openpyxl (via pip or conda).")
+            raise ImportError(
+                "To work with excel files, please install openpyxl (via pip or conda)."
+            )
         return pd.read_excel(filename, **kwargs)
-        
+
     raise ValueError("Tabular data must be in .csv or .xlsx format")
