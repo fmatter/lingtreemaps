@@ -1,6 +1,7 @@
 # lingtreemaps
 
 ![License](https://img.shields.io/github/license/fmatter/lingtreemaps)
+[![DOI](https://zenodo.org/badge/530096540.svg)](https://zenodo.org/badge/latestdoi/530096540)
 [![Documentation Status](https://readthedocs.org/projects/lingtreemaps/badge/?version=latest)](https://lingtreemaps.readthedocs.io/en/latest/?badge=latest)
 [![Tests](https://img.shields.io/github/workflow/status/fmatter/lingtreemaps/tests?label=tests)](https://github.com/fmatter/lingtreemaps/actions/workflows/tests.yml)
 [![Linting](https://img.shields.io/github/workflow/status/fmatter/lingtreemaps/lint?label=linting)](https://github.com/fmatter/lingtreemaps/actions/workflows/lint.yml)
