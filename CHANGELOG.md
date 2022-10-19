@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 * `.xlsx` input
 
+### Fixed
+* hatches of unique values are now displayed correctly (fake coords in antarctica)
+
 ## [0.0.4] -- 2022-09-29
 
 ### Changed

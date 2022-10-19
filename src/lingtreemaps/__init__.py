@@ -243,6 +243,27 @@ def plot_map(  # noqa: MC0001
         lg_df, geometry=gpd.points_from_xy(lg_df.Longitude, lg_df.Latitude)
     )  # convert to a geodataframe
 
+    # Hack for cases where a value only occurs once
+    if hatching:
+        fake_list = []
+        for value, hatch in value_hatch_dic.items():
+            fake_list.append(
+                {
+                    "ID": f"dummy_{value}",
+                    "color": value_color_dic[value],
+                    "Value": value,
+                    "Latitude": -83.747128,
+                    "Longitude": 2.431754,
+                }
+            )
+        lg_df = pd.concat([lg_df, pd.DataFrame.from_dict(fake_list)])
+
+        fake_gdf = gpd.GeoDataFrame(
+            lg_df, geometry=gpd.points_from_xy(lg_df.Longitude, lg_df.Latitude)
+        )  # convert to a geodataframe
+    else:
+        fake_gdf = gdf.copy()
+
     gdf.dropna(inplace=True, subset=["Latitude", "Longitude"])
 
     bounds = gdf.geometry.total_bounds  # outer boundaries of the language points
@@ -371,14 +392,14 @@ def plot_map(  # noqa: MC0001
     else:
         ax.axis("off")
 
-    leaf_df = gdf.copy()
+    leaf_df = fake_gdf.copy()
 
     if hatching:
         for value, hatch in hatch_dict.items():
-            gdf[gdf["Value"] == value].plot(
+            fake_gdf[fake_gdf["Value"] == value].plot(
                 ax=ax,
                 markersize=map_marker_size,
-                facecolor=gdf[gdf["Value"] == value]["color"],
+                facecolor=fake_gdf[fake_gdf["Value"] == value]["color"],
                 linewidth=map_marker_lw,
                 zorder=99,
                 hatch=hatch,
@@ -415,6 +436,10 @@ def plot_map(  # noqa: MC0001
     sideline = bounds[-1] - leaf_spacing * 0.5
 
     node_leafs = {}
+
+    if hatching:
+        for value, hatch in hatch_dict.items():
+            node_leafs["dummy_" + value] = (-83.747128, 2.431754)
 
     def draw_clade(clade, color, lw):
         lvl_line_start = get_clade_middle(clade.clades[0])
