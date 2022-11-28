@@ -6,8 +6,9 @@ authors:
   - family-names: Matter
     given-names: Florian
     orcid: "https://orcid.org/0000-0002-2545-5154"
-date-released: 2022-10-19
+date-released: 2022-11-27
 version: "0.0.6.dev"
+doi: 10.5281/zenodo.7226682
 repository-code: "https://github.com/fmatter/lingtreemaps"
 keywords:
   - linguistics
