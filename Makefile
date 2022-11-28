@@ -83,7 +83,6 @@ release:
 	git push; git push --tags
 	make twine
 	bump2version patch
-	python3 etc/citation.py
 	git commit -am "bump"; git push
 
 twine: dist ## package and upload a release
