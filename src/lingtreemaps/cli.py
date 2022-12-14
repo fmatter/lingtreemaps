@@ -125,10 +125,10 @@ def download_tree(glottocode, languages, output_dir, get_languages, plot):
 )
 def get_language_data(glottocode, output_dir):
     """Note: for this to work, you need to install cldfbench and download
-    the glottolog catalog.
+        the glottolog catalog.
 
-GLOTTOCODE: The glottocode of the root of the tree you want to download the language
-list for."""
+    GLOTTOCODE: The glottocode of the root of the tree you want to download the language
+    list for."""
     df = lingtreemaps.get_glottolog_csv(glottocode)
     df.to_csv(Path(output_dir) / f"{glottocode}.csv", index=False)
     return df

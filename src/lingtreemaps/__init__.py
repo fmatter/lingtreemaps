@@ -91,8 +91,12 @@ def download_glottolog_tree(root, df=None):
 
 def get_glottolog_csv(glottocode):
     try:
-        from cldfbench.catalogs import Glottolog  # pylint: disable=import-outside-toplevel
-        from cldfbench.catalogs import pyglottolog  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import (
+            Glottolog,
+        )  # pylint: disable=import-outside-toplevel
+        from cldfbench.catalogs import (
+            pyglottolog,
+        )  # pylint: disable=import-outside-toplevel
     except ImportError:
         log.error("Please run pip install cldfbench[glottolog]")
         sys.exit()
@@ -566,17 +570,17 @@ def plot_map(  # noqa: MC0001
             visible_map[2] - visible_map[0],
             visible_map[3] - visible_map[1],
         )
+        if legend_position:
+            legend = ax.legend(
+                handles=handles,
+                loc=legend_position,
+                bbox_to_anchor=bbox_coords,
+                bbox_transform=ax.transData,
+                prop={"size": legend_size, "family": "Linux Libertine"},
+            ).get_frame()
 
-        legend = ax.legend(
-            handles=handles,
-            loc=legend_position,
-            bbox_to_anchor=bbox_coords,
-            bbox_transform=ax.transData,
-            prop={"size": legend_size, "family": "Linux Libertine"},
-        ).get_frame()
-
-        legend.set_edgecolor("black")
-        legend.set_facecolor("white")
+            legend.set_edgecolor("black")
+            legend.set_facecolor("white")
 
     # add text labels
     if text_df is not None:

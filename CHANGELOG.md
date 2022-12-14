@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 * `.xlsx` input
+* if `legend_position` is set to `None`, no legend is shown
 
 ### Fixed
 * hatches of unique values are now displayed correctly (fake coords in antarctica)
