@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 * hatches of unique values are now displayed correctly (fake coords in antarctica)
+* languages with coords but no position in the tree are allowed
 
 ## [0.0.4] -- 2022-09-29
 

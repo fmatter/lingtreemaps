@@ -602,6 +602,7 @@ def plot_map(  # noqa: MC0001
     tree_color = color_dic.get(tree.root.name, "black")
     draw_clade(tree.root, tree_color, tree_lw)
 
+    leaf_df = leaf_df[leaf_df[id_col].isin(node_leafs)]
     leaf_df["geometry"] = leaf_df.apply(
         lambda x: shapely.geometry.Point(node_leafs[x[id_col]]), axis=1
     )
