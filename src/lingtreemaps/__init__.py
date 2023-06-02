@@ -151,7 +151,8 @@ def plot_map(  # noqa: MC0001
     tree_sort_mode,
     tree_depth,
     tree_lw,
-    internal_map_padding,
+    internal_map_padding_x,
+    internal_map_padding_y,
     seaborn_palette,
     color_dict,
     hatch_dict,
@@ -173,6 +174,7 @@ def plot_map(  # noqa: MC0001
     legend_size,
     rotation,
     ax,
+    # fig,
     background,
     attribution_position,
     cx_provider,
@@ -335,11 +337,11 @@ def plot_map(  # noqa: MC0001
 
     leaf_count = len(tree.get_terminals())
     map_height = abs(gdf.geometry.total_bounds[1] - gdf.geometry.total_bounds[3])
-    leaf_spacing = map_height / leaf_count
 
     bounds = gdf.geometry.total_bounds  # tight box around the points
-    internal_map_padding = internal_map_padding or leaf_spacing * 0.5
     data_rect = shapely.geometry.box(*bounds)
+
+    leaf_spacing = (map_height + internal_map_padding_y*2) / leaf_count
 
     # how deep is the entire tree?
     tree_depth = tree_depth or (bounds[2] - bounds[0]) / 3
@@ -352,10 +354,10 @@ def plot_map(  # noqa: MC0001
     tree_map_padding = tree_map_padding or tree_depth * 0.2
 
     visible_map = [
-        bounds[0] - internal_map_padding,
-        bounds[1] - internal_map_padding,
-        bounds[2] + internal_map_padding,
-        bounds[3] + internal_map_padding,
+        bounds[0] - internal_map_padding_x,
+        bounds[1] - internal_map_padding_y,
+        bounds[2] + internal_map_padding_x,
+        bounds[3] + internal_map_padding_y,
     ]  # larger padding box
     visible_map_rect = shapely.geometry.box(*visible_map)
 
@@ -425,7 +427,7 @@ def plot_map(  # noqa: MC0001
     leaf_positions = {}
     i = 0
     for x in reversed(tree.get_terminals()):
-        leaf_positions[x] = i
+        leaf_positions[x] = i - internal_map_padding_y + 0.02
         i += leaf_spacing
 
     def get_clade_middle(clade):
@@ -520,9 +522,10 @@ def plot_map(  # noqa: MC0001
                                 "arrowstyle": "-",
                                 "color": point["color"],
                                 "shrinkA": 0,
-                                "shrinkB": 3.5,
+                                # "shrinkB": 3.5,
                                 "linewidth": connection_lw,
                                 "linestyle": "dotted",
+                                "relpos": (1,0.5)
                             },
                         )
                         if node_alpha == 1:
@@ -735,7 +738,8 @@ def plot_map(  # noqa: MC0001
         log.info(
             f"""
 tree_map_padding = {tree_map_padding}
-internal_map_padding = {internal_map_padding}
+internal_map_padding_x = {internal_map_padding_x}
+internal_map_padding_y = {internal_map_padding_y}
 text_x_offset = {text_x_offset}
 text_y_offset = {text_y_offset}
 tree_depth = {tree_depth}

@@ -32,10 +32,10 @@ tree_depth: null
 # If unspecified, lingtreemaps will guess.
 leaf_spacing: null
 
-# Padding between the outer boundaries of the map and the rectangle
+# Paddings between the outer boundaries of the map and the rectangle
 # in which languages are located.
-# If unspecified, lingtreemaps will guess.
-internal_map_padding: null
+internal_map_padding_x: 0.1
+internal_map_padding_y: 0.1
 
 # Color palette
 seaborn_palette: "bright"

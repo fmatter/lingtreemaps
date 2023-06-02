@@ -44,6 +44,8 @@ def plot(
 
     TREE: A newick tree file."""
     df = read_data_file(languages)
+    if debug:
+        print(df)
     if not filename:
         filename = Path(languages).stem
     tree = Phylo.read(tree, "newick")
